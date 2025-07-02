@@ -8,8 +8,6 @@ This is a functional LinkedIn clone built with Flutter. The project demonstrates
 |:------------:|:----:|:-------:|
 | ![Login](lib/screenshots/ScreenshotLogin.png) | ![Feed](lib/screenshots/ScreenshotFeed.png) | ![Messages](lib/screenshots/ScreenshotMessages.png) |
 
-> Add your screenshots to the `screenshots/` folder with the above filenames.
-
 ## Features
 - **Authentication:** Login and registration forms. Only a hardcoded user can log in.
 - **Feed:** View a list of hardcoded news posts. Users can like posts.

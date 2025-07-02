@@ -1,16 +1,47 @@
 import 'package:flutter/material.dart';
 import '../../widgets/user_avatar.dart';
+import 'edit_profile_screen.dart';
 
-class ProfileScreen extends StatelessWidget {
-  final String name = 'Adilkhan Orakbay';
-  final String headline = 'Software Engineer at ...';
-  final String bio = 'Passionate about Flutter, check my other GitHub projects!';
-  final String avatarUrl = '';
+class ProfileScreen extends StatefulWidget {
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  String name = 'Adilkhan Orakbay';
+  String headline = 'Software Engineer at ...';
+  String bio = 'Passionate about Flutter, check my other GitHub projects!';
+  String avatarUrl = '';
+
+  void _editProfile() async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EditProfileScreen(
+          initialName: name,
+          initialBio: bio,
+          initialAvatarUrl: avatarUrl,
+        ),
+      ),
+    );
+    if (result != null && result is Map) {
+      setState(() {
+        name = result['name'] ?? name;
+        bio = result['bio'] ?? bio;
+        avatarUrl = result['avatarUrl'] ?? avatarUrl;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Profile')),
+      appBar: AppBar(title: Text('Profile'), actions: [
+        IconButton(
+          icon: Icon(Icons.edit),
+          onPressed: _editProfile,
+        ),
+      ]),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
