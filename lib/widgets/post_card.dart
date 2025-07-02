@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'comment_section.dart';
 
 class PostCard extends StatelessWidget {
   final String userName;
   final String content;
   final int likes;
   final bool liked;
+  final List<String> comments;
   final VoidCallback? onLike;
   final VoidCallback? onComment;
 
@@ -13,6 +15,7 @@ class PostCard extends StatelessWidget {
     required this.content,
     required this.likes,
     required this.liked,
+    required this.comments,
     this.onLike,
     this.onComment,
     Key? key,
@@ -30,6 +33,11 @@ class PostCard extends StatelessWidget {
             Text(userName, style: TextStyle(fontWeight: FontWeight.bold)),
             SizedBox(height: 8),
             Text(content),
+            if (comments.isNotEmpty) ...[
+              SizedBox(height: 12),
+              Text('Comments:', style: TextStyle(fontWeight: FontWeight.bold)),
+              CommentSection(comments: comments),
+            ],
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

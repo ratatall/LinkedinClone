@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../widgets/message_tile.dart';
+import 'chat_screen.dart';
 
 class MessagesScreen extends StatelessWidget {
   final List<Map<String, String>> _messages = const [
@@ -21,6 +22,15 @@ class MessagesScreen extends StatelessWidget {
     },
   ];
 
+  void _openChat(BuildContext context, String sender, String message) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ChatScreen(sender: sender, message: message),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +42,7 @@ class MessagesScreen extends StatelessWidget {
           return MessageTile(
             sender: msg['sender']!,
             message: msg['message']!,
-            onTap: () {},
+            onTap: () => _openChat(context, msg['sender']!, msg['message']!),
           );
         },
       ),

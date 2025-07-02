@@ -10,10 +10,18 @@ This is a functional LinkedIn clone built with Flutter. The project demonstrates
 
 ## Features
 - **Authentication:** Login and registration forms. Only a hardcoded user can log in.
-- **Feed:** View a list of hardcoded news posts. Users can like posts.
-- **Profile:** View a hardcoded user profile (Adilkhan Orakbay).
+- **Feed:**
+  - View a list of hardcoded news posts.
+  - Users can like posts.
+  - Users can create new posts.
+  - Users can leave comments under posts.
+- **Profile:**
+  - View a hardcoded user profile (Adilkhan Orakbay).
+  - Edit your name, profile picture, and description.
 - **Connections:** See a list of hardcoded connections.
-- **Messages:** View a list of hardcoded messages.
+- **Messages:**
+  - View a list of hardcoded messages.
+  - Tap a message to read its content.
 - **Notifications:** View a list of hardcoded notifications.
 
 
