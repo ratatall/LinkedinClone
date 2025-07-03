@@ -6,7 +6,7 @@ This is a functional LinkedIn clone built with Flutter. The project demonstrates
 
 | Login Screen | Feed | Profile |
 |:------------:|:----:|:-------:|
-| ![Login](lib/screenshots/ScreenshotLogin.png) | ![Feed](lib/screenshots/ScreenshotFeed.png) | ![Messages](lib/screenshots/ScreenshotMessages.png) |
+| ![Login](screenshots/ScreenshotLogin.png) | ![Feed](screenshots/ScreenshotFeed.png) | ![Messages](screenshots/ScreenshotMessages.png) |
 
 ## Features
 - **Authentication:** Login and registration forms. Only a hardcoded user can log in.
@@ -29,7 +29,7 @@ This is a functional LinkedIn clone built with Flutter. The project demonstrates
 - Use the following credentials to log in:
   - **Email:** `aa@gmail.com`
   - **Password:** `1234`
-- Any other credentials will not work.
+- You can use anything other to register, but profile will be the same
 
 ## Project Structure
 - `lib/models/` — Data models (User, Post, etc.)
@@ -41,7 +41,8 @@ This is a functional LinkedIn clone built with Flutter. The project demonstrates
 - All data (posts, messages, connections, notifications) is hardcoded for demonstration purposes.
 - The UI is kept simple to focus on functionality and structure.
 
----
+## Updates
+- Integrated Firebase with Realtime Database and a Firebase Data Connect services.
+- Implemented CRU (without deletion as for now) for basic posting
 
-Feel free to use this project as a starting point for your own Flutter social network apps!
 
